@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #22577A;
+}
+
+p{
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+#projectName{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    color: #fff;
+}
+
+.eachTimeline{
+    display: grid;
+    width: 85%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.timelineDate,.timelineText{
+    border-left: 2px solid #FCF6F6;
+    padding-left: 40px;
+}
+
+.timelineText{
+    padding-top: 2em;
+    padding-bottom: 60px;
+    
+}
+
+.innerBg{
+    background-color: #FCF6F6;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.timelineDate{
+  width: 100%;
+  position: relative;
+}
+
+.timelineDate::before{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #990012;
+    border: 4px solid #FCF6F6;
+    border-radius: 50%;
+    left: -10px;
+
+}
+
+.dateText{
+    background-color: #990012;
+    font-size: .8rem;
+    font-weight: 500;
+    padding: .6em 1.5em;
+    border-radius: 30px;
+    color: #fff;
+    border: 4px solid #FCF6F6;
+    margin-left: 0;
+}
+
+.timelineheader{
+  color: #990012;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+.timeline-para{
+  font-size: 1rem;
+  line-height: 1.5em;
+}
+
+@media screen and (min-width:780px) {
+    .eachTimeline{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .timelineText{
+        padding-top: 0em;
+    }
+
+    .eachTimeline:nth-child(odd) .timelineDate{
+        order: 1;
+    }
+    
+    .eachTimeline:nth-child(odd) .timelineText{
+        border-left: 0;
+        order: 0;
+    }
+
+    .eachTimeline:nth-child(odd) .timelineText .timeline-para,
+    .eachTimeline:nth-child(odd) .timelineText .timelineheader{
+        text-align: right;
+    }
+
+
+    .eachTimeline:nth-child(even)  .timelineDate::before{
+        left: calc(100% - 8px);
+    }
+
+    .eachTimeline:nth-child(even) .timelineDate{
+        border-left: 0;
+        order: 0;
+    }
+    
+    .eachTimeline:nth-child(even) .timelineText{
+        order: 1;
+    }
+    
+    .eachTimeline:nth-child(even) .timelineDate{
+        text-align: right;
+        padding-right: 40px;
+        padding-left: 0px;
+    }
+
+    .eachTimeline:nth-child(odd) .timelineText{
+        padding-right: 40px;
+        padding-left: 0px;
+    }
+
+}
+
